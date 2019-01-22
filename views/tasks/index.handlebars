@@ -1,0 +1,13 @@
+{{#each tasks}}
+    <div class="card card-body mb-4">
+        <h4>{{title}}</h4>
+        <p>{{details}}</p>
+        <a href="/tasks/edit/{{id}}" class="btn btn-dark btn-block mb-2">Edit</a>
+        <form method="POST" action="/tasks/{{id}}?_method=DELETE">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" class="btn btn-danger btn-block" value="DELETE">
+        </form>
+    </div>
+{{else}}
+    <p>No task listed</p>
+{{/each}}
